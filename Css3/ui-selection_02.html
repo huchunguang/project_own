@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selection状态选择器测试</title>
+<script type="text/javascript" charset="utf-8">
+		
+</script>
+<style type="text/css" media="screen">
+	::selection{
+		background:#FF0000;
+		color:#008000;
+	}
+	input[type='email']:invalid{
+		color:red;
+	}
+	input[type='email']:valid{
+		color:green;
+	}
+	input[type='text']:required{
+		color:red;
+	}
+	input[type='text']:optional{
+		color:green;
+	}
+</style>
+</head>
+<body>
+<p>这是元素的selection状态选择器的测试</p>
+<form action="ui-selection_02_submit" method="get" accept-charset="utf-8">
+  <input type="text" name="username" id="" required/>
+  <input type="text" name="age" id="" />
+	<input type="email" name="email" id="" />
+	
+</form>
+
+</body>
+</html>
