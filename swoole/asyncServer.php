@@ -10,7 +10,7 @@ $server->on('receive',function($server,$fd,$from_id,$data){
     echo "Dispatch asyncTask: id:$task_id\n";
 });
 //执行异步任务
-$server->on('task',function($server,$task_id,$from_id,$data){
+$server->on('task',function($server,$task_id,$src_worker_id,$data){
     echo "New AsyncTask{id=$task_id}".PHP_EOL;
     //返回任务的执行结果 
     $server->finish("$data ->  OK");
@@ -21,6 +21,5 @@ $server->on('task',function($server,$task_id,$from_id,$data){
 $server->on('finish',function($server,$task_id,$data){
     echo "AsyncTask{$task_id} Finsh: $data".PHP_EOL;
 });
-
 //启动服务器
 $server->start();

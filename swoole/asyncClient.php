@@ -5,6 +5,11 @@ $client = new swoole_client(SWOOLE_SOCK_TCP,SWOOLE_SOCK_ASYNC);
 $client->on('connect',function($cli){
     $cli->send("Hello World\n");
 });
+// //注册睡眠模式
+// $client->on('receive',function(swoole_client $client,$data){
+//     $client->sleep();
+    
+// });
 //注册数据接收回调
 $client->on('receive',function($cli,$data){
     echo "Received data:$data\n";
